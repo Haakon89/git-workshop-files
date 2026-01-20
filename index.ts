@@ -1,14 +1,12 @@
-const people = [
+const elements = [
+  { firstname: 'Arne', lastname: 'Arnesen' },
   { firstname: 'Magnus', lastname: 'Magnusson' },
-  { firstname: 'Stefan', lastname: 'Stefanson' },
+  { firstname: 'Guri', lastname: 'Gurisen' },
 ]
 
-export const greeting = (firstname: string, lastname: string) => {
-  console.log(`Hei hei ${firstname} ${lastname}`);
-}
-
-export const greetTheGang = () => {
-  people.forEach((person) => {
-    greeting(person.firstname, person.lastname);
+let createTable = () => {
+  const peopleTable = elements.map(({ firstname, lastname}) => {
+    return [firstname, lastname]
   });
+  console.table(peopleTable, ["First name", "Last name"]);
 }
